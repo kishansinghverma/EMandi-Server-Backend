@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb";
-import 'dotenv/config';
 
 export const constants = {
     database: 'E-Mandi',

@@ -1,4 +1,5 @@
 //--------------------- imports ---------------------
+import 'dotenv/config';
 import {
     addParty,
     deleteRecord,
