@@ -15,7 +15,7 @@ import express from "express";
 import cors from "cors";
 import { constants, handleJsonError } from "./utils.js";
 
-const port = 8080;
+const port = process.env.PORT || 3000;;
 const app = express();
 
 app.use(express.json());
@@ -125,4 +125,4 @@ app.all("*", (req, res) => {
     res.status(404).end();
 })
 
-app.listen(port, () => console.log(`Emandi Server running on ${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`Emandi Server running on ${port}`));
