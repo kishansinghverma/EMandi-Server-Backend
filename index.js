@@ -28,10 +28,12 @@ app.use(express.static("../frontend/build"));
 //----------------------------------------------------
 
 app.get("/api", (req, res) => {
+    console.log('Ping Success...');
     res.status(200).send('API server is up & running...'); 
 });
 
 app.get("/api/peek", (req, res) => {
+    console.log('Ping Success... Peeking');
     peekRecord()
         .then(response => res.status(response.statusCode).send(response.content))
         .catch(err => res.status(500).send(err.message))

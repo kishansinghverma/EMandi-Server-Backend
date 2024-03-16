@@ -25,8 +25,10 @@ export const getClientWithCollection = (collectionName) => {
 
 export const getDocument = async (collectionName, query, options) => {
     const [client, collection] = getClientWithCollection(collectionName);
+    console.log('fetching data...');
     try {
         const data = await collection.findOne(query, options);
+        console.log(data);
         return { content: data, statusCode: data ? 200 : 404 };
     }
     catch (err) {
