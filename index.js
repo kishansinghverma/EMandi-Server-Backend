@@ -27,6 +27,10 @@ app.use(cors());
 app.use(express.static("../frontend/build"));
 //----------------------------------------------------
 
+app.get("/api", (req, res) => {
+    res.status(200).send('API server is up & running...'); 
+});
+
 app.get("/api/peek", (req, res) => {
     peekRecord()
         .then(response => res.status(response.statusCode).send(response.content))
